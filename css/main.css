@@ -1,0 +1,95 @@
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+main {
+  flex-grow: 1;
+}
+
+.container {
+  width: 1300px;
+  margin: 0 auto;
+}
+
+.js-list {
+  margin: 0;
+  margin-top: 50px;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.img {
+  width: 300px;
+  height: 445px;
+}
+
+.form {
+  text-align: center;
+}
+
+.form-input {
+  display: inline-block;
+  margin: 50px auto 0;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.btn {
+  display: inline-block;
+  margin: 50px auto 0;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.js-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgb(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.d-none {
+  display: none;
+}
+
+.modal {
+  margin: 0;
+  list-style-type: none;
+  padding: 20px;
+  background-color: #fff;
+  width: 400px;
+  height: 620px;
+  border-radius: 10px;
+  text-align: center;
+}
+
