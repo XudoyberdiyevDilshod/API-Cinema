@@ -64,19 +64,20 @@ const renderBookmarkList = (arr, node) => {
     const newItem = document.createElement("li");
     const newText = document.createElement("p");
     let elYear = document.createElement("p");
+    let elImg = document.createElement("img");
     const newDeleteBtn = document.createElement("button");
 
+    elImg.setAttribute("class", "img");
+    elImg.src = item.Poster;
     newText.textContent = item.Title;
     elYear.textContent = item.Year;
     newDeleteBtn.innerHTML = "&times;";
     newDeleteBtn.setAttribute("class", "delete-bookmark");
     newDeleteBtn.dataset.filmId = item.imdbID;
 
-    newItem.append(newText, elYear, newDeleteBtn);
-    
+    newItem.append(elImg, newText, elYear, newDeleteBtn);
+
     node.appendChild(newItem);
-    elBtnFavour.addEventListener("click", function(evt){
-    })
   });
 };
 
@@ -98,7 +99,7 @@ elList.addEventListener("click", function (evt) {
     const filmId = evt.target.dataset.filmId;
     const findedFilm = listArr.find((film) => film.imdbID === filmId);
     bookmarkList.add(findedFilm);
-    renderBookmarkList(bookmarkList, elBookmarkList);
+    // renderBookmarkList(bookmarkList, elBookmarkList);
   }
 });
 
@@ -109,4 +110,9 @@ elBookmarkList.addEventListener("click", function (evt) {
     bookmarkList.delete(findedFilm);
     renderBookmarkList(bookmarkList, elBookmarkList);
   }
+});
+
+elBtnFavour.addEventListener("click", function (evt) {
+  elList.innerHTML = "";
+  renderBookmarkList(bookmarkList, elBookmarkList);
 });
